@@ -29,13 +29,13 @@ export default function Overlay() {
           className="absolute inset-0 flex items-center justify-center pointer-events-auto"
         >
           <div className="text-center group">
-            <h1 className="text-6xl md:text-9xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-neutral-500 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] mix-blend-difference">
-              EMAN KHALIQ
+            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-matrix drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">
+              WAKE UP, NEO...
             </h1>
-            <div className="mt-6 inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-[2px] rounded-full">
-               <div className="bg-[#121212]/80 backdrop-blur-md rounded-full px-6 py-2">
-                 <p className="text-sm md:text-lg text-white font-medium tracking-wide uppercase">
-                   CS Student x AI Developer
+            <div className="mt-6 inline-block bg-matrix-dark p-[2px] rounded-none border border-matrix">
+               <div className="bg-black backdrop-blur-md px-6 py-2">
+                 <p className="text-sm md:text-lg text-matrix font-medium tracking-widest uppercase">
+                   SYSTEM ADMINISTRATOR // EMAN KHALIQ
                  </p>
                </div>
             </div>
@@ -47,10 +47,10 @@ export default function Overlay() {
           className="absolute inset-0 flex items-center justify-start px-8 md:px-24 pointer-events-auto"
         >
           <div className="max-w-3xl text-left">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-2xl leading-[0.9]">
-              BUILDING <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff87] to-[#60efff]">ROBUST</span> <br />
-              APPS.
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-matrix drop-shadow-[0_0_20px_rgba(0,255,65,0.5)] leading-[0.9]">
+              THE MATRIX <br />
+              <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">HAS YOU.</span> <br />
+              FOLLOW THE WHITE RABBIT.
             </h2>
           </div>
         </motion.div>
@@ -59,11 +59,18 @@ export default function Overlay() {
           style={{ opacity: opacity3, y: y3 }}
           className="absolute inset-0 flex items-center justify-end px-8 md:px-24 pointer-events-auto"
         >
-          <div className="max-w-3xl text-right">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-2xl leading-[0.9]">
-              DATA & AI <br />
-              FOR <span className="text-transparent bg-clip-text bg-gradient-to-l from-[#ff0f7b] to-[#f89b29]">IMPACT.</span>
+          <div className="max-w-3xl text-right flex flex-col items-end">
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-matrix drop-shadow-[0_0_20px_rgba(0,255,65,0.5)] leading-[0.9]">
+              CONSTRUCT <br />
+              <span className="text-white">INITIATED.</span>
             </h2>
+            <div className="mt-8 border-l-4 border-matrix pl-6 max-w-lg text-left">
+              <p className="text-matrix-light text-xl">
+                &gt; Accessing central database...<br/>
+                &gt; Loading skill protocols...<br/>
+                &gt; Establishing secure connection...
+              </p>
+            </div>
           </div>
         </motion.div>
 

@@ -9,8 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#121212",
-        foreground: "#ffffff",
+        background: "#000000",
+        foreground: "#00ff41",
+        matrix: {
+          light: "#00ff41",
+          DEFAULT: "#008f11",
+          dark: "#003b00",
+        }
       },
     },
   },

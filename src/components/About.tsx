@@ -14,38 +14,38 @@ export default function About() {
 
   const stack = [
     {
-      category: "CORE",
+      category: "SYS.CORE",
       skills: ["Python (FastAPI)", "C", "SQL", "PWA", "TypeScript"],
-      color: "from-blue-400 to-cyan-300"
+      color: "border-matrix-light shadow-[0_0_15px_rgba(0,255,65,0.3)]"
     },
     {
-      category: "AI / ML",
+      category: "NEURAL.NET",
       skills: ["LLAMA-3", "Mistral AI", "CrewAI", "OCR", "Computer Vision", "Agents"],
-      color: "from-purple-500 to-pink-500"
+      color: "border-matrix-DEFAULT shadow-[0_0_15px_rgba(0,143,17,0.3)]"
     },
     {
-      category: "WEB / TOOLS",
+      category: "EXTERNAL.LINK",
       skills: ["Coral MCP", "Solana Pay", "Firebase", "Azure", "Netlify", "Google APIs"],
-      color: "from-[#00ff87] to-[#60efff]"
+      color: "border-matrix-dark shadow-[0_0_15px_rgba(0,59,0,0.3)]"
     },
   ];
 
   const achievements = [
-    "Top 30 Finalist: Huawei ICT Competition",
-    "Bronze Honour: International CS Competition '25",
-    "9/9 Puzzles Solved: Harvard CS50 Puzzle Day",
-    "Open Source Contributor: Hacktoberfest",
-    "12x International AI Hackathon Participant",
+    "Security Clearance Level 30: Huawei ICT Competition",
+    "Bronze Access Token: International CS Competition '25",
+    "9/9 Data Packets Decrypted: Harvard CS50 Puzzle Day",
+    "Open Source Operative: Hacktoberfest",
+    "12x Global Simulation Participant",
     "Harvard HBS Aspire & McKinsey Forward Graduate",
   ];
 
   return (
     <motion.section 
       ref={sectionRef} 
-      className="bg-[#09090b] text-white py-40 px-8 md:px-24 overflow-hidden relative z-20 rounded-t-[3rem] md:rounded-t-[4rem] shadow-[0_-20px_50px_rgba(0,0,0,0.8)] -mt-12 md:-mt-24"
+      className="bg-black text-matrix py-40 px-8 md:px-24 overflow-hidden relative z-20 rounded-t-[3rem] md:rounded-t-[4rem] border-t-2 border-matrix-light shadow-[0_-10px_30px_rgba(0,255,41,0.2)] -mt-12 md:-mt-24"
     >
-      {/* Background glowing orb */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      {/* Background terminal grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00ff4110_1px,transparent_1px),linear-gradient(to_bottom,#00ff4110_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       <motion.div style={{ y: parallaxY }} className="max-w-7xl mx-auto space-y-32 relative z-10">
         
@@ -57,20 +57,20 @@ export default function About() {
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
           <div className="flex items-baseline gap-4 mb-8">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">
-              Main Character Energy
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase drop-shadow-[0_0_10px_#00ff41]">
+              SYSTEM OVERRIDE
             </h2>
-            <span className="text-4xl">✨</span>
+            <span className="text-4xl animate-pulse">_</span>
           </div>
-          <div className="text-xl md:text-2xl text-gray-400 max-w-4xl leading-relaxed font-medium">
+          <div className="text-xl md:text-2xl text-matrix-DEFAULT max-w-4xl leading-relaxed font-medium">
             <p className="mb-6">
-              I'm a CS student at UET Taxila, obsessed with using <span className="text-white hover:text-cyan-400 transition-colors">Data & AI</span> to build things that actually matter. Straight A's (3.54 CGPA) + Harvard CS50x certified.
+              I'm an operative at UET Taxila, obsessed with using <span className="text-matrix-light font-bold">Data & AI</span> to hack the simulation. Straight A's (3.54 CGPA) + Harvard CS50x certified.
             </p>
             <p className="mb-6">
-              I live at the intersection of <span className="text-white hover:text-purple-400 transition-colors">AI, Web3, and Social Impact</span>. From anti-counterfeit Med-Tech to multi-agent Web3 shopping bots.
+              I live at the intersection of <span className="text-white drop-shadow-[0_0_5px_#fff]">AI, Web3, and Protocol Integrity</span>. From anti-counterfeit Med-Tech to multi-agent Web3 shopping programs.
             </p>
             <p>
-              Outside the IDE? I'm the Hult Prize Campus Director and mentoring global devs for GirlScript Summer of Code. Always shipping. 🚀
+              Outside the mainframe? I'm the Hult Prize Campus Director and mentoring global nodes for GirlScript Summer of Code. Always compiling. 
             </p>
           </div>
         </motion.div>
@@ -81,25 +81,27 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-12">
-            The Arsenal
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-12 drop-shadow-[0_0_10px_#00ff41]">
+            THE ARSENAL
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
             {stack.map((group, idx) => (
               <motion.div 
                 key={idx} 
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-[#121214] border border-white/5 p-8 rounded-[2rem] shadow-2xl relative overflow-hidden group"
+                className={`bg-black border ${group.color} p-8 rounded-none relative overflow-hidden group hover:bg-matrix-dark/20 transition-all duration-300`}
               >
-                <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${group.color} rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
-                <h3 className="text-2xl font-black tracking-tight mb-8">
-                  {group.category}
+                <div className="absolute top-0 right-0 p-2 text-matrix opacity-30 text-xs">
+                  0x{Math.random().toString(16).substr(2, 6).toUpperCase()}
+                </div>
+                <h3 className="text-2xl font-bold tracking-tight mb-8 text-white drop-shadow-[0_0_5px_#fff]">
+                  &gt; {group.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {group.skills.map((skill, sIdx) => (
                     <span 
                       key={sIdx} 
-                      className={`px-4 py-2 bg-[#1c1c1f] rounded-xl text-sm font-bold text-gray-300 border border-white/5 hover:border-white/20 transition-all`}
+                      className="px-4 py-2 bg-black rounded-none text-sm font-bold text-matrix border border-matrix hover:bg-matrix hover:text-black transition-all"
                     >
                       {skill}
                     </span>
@@ -116,11 +118,10 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="flex items-baseline gap-4 mb-12">
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">
-              Hall of Fame
+          <div className="flex items-baseline gap-4 mb-12 border-b border-matrix pb-4">
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase drop-shadow-[0_0_10px_#00ff41]">
+              ACCESS LOGS
             </h2>
-            <span className="text-4xl">🏆</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl">
             {achievements.map((item, idx) => (
@@ -131,12 +132,12 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05, type: "spring", stiffness: 100 }}
                 whileHover={{ scale: 1.03 }}
-                className="p-6 bg-[#121214] border border-white/5 rounded-2xl flex items-center gap-4 cursor-default"
+                className="p-6 bg-black border border-matrix border-l-4 rounded-none flex items-center gap-4 cursor-default hover:bg-matrix-dark/50"
               >
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                  <div className="w-3 h-3 rounded-full bg-[#00ff87] shadow-[0_0_15px_#00ff87]" />
+                <div className="w-8 h-8 flex items-center justify-center shrink-0 text-matrix-light font-bold">
+                  {`[${idx < 9 ? '0' : ''}${idx + 1}]`}
                 </div>
-                <p className="text-lg font-bold text-gray-200">
+                <p className="text-lg font-bold text-matrix-light">
                   {item}
                 </p>
               </motion.div>

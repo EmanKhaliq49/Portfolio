@@ -1,4 +1,4 @@
-import ScrollyCanvas from "@/components/ScrollyCanvas";
+import MatrixRain from "@/components/MatrixRain";
 import Overlay from "@/components/Overlay";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
@@ -6,9 +6,9 @@ import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
-    <main className="bg-[#121212] min-h-screen font-sans">
-      <div className="relative">
-        <ScrollyCanvas />
+    <main className="bg-black min-h-screen font-sans text-matrix">
+      <div className="relative h-screen bg-black">
+        <MatrixRain />
         <Overlay />
       </div>
       <About />

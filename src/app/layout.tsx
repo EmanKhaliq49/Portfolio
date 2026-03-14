@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const spaceMono = Space_Mono({ 
+  weight: ['400', '700'],
+  subsets: ["latin"] 
+});
 
 import SmoothScroll from "@/components/SmoothScroll";
 
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-[#121212] text-white antialiased`}>
+      <body className={`${spaceMono.className} bg-black text-[#00ff41] antialiased`}>
         <SmoothScroll>
           {children}
         </SmoothScroll>

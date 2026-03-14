@@ -14,49 +14,50 @@ export default function Experience() {
 
   const experiences = [
     {
-      role: "Data Analytics Job Simulation",
+      role: "Data Analytics Simulation Node",
       organization: "Deloitte, Australia",
-      category: "Industry",
-      description: "Data modeling, forensics, and data visualization using Tableau.",
+      category: "Sys.Industry",
+      description: "Data modeling protocols, network forensics, and Tableau data visualization arrays.",
     },
     {
-      role: "Cybersecurity Simulation",
+      role: "Cybersecurity Training Construct",
       organization: "Mastercard",
-      category: "Industry",
-      description: "Phishing email simulations, analysis, and response strategies.",
+      category: "Sys.Industry",
+      description: "Simulating phishing breaches, threat analysis, and rapid response overrides.",
     },
     {
-      role: "Program Graduate",
+      role: "Leadership Program Agent",
       organization: "McKinsey Forward & HBS Aspire",
-      category: "Certification",
-      description: "Harvard Business School and McKinsey leadership programs.",
+      category: "Protocol.Cer",
+      description: "Harvard Business School and McKinsey leadership algorithm processing.",
     },
     {
-      role: "Campus Director",
+      role: "Node Administrator",
       organization: "Hult Prize UETT",
-      category: "Leadership",
-      description: "Organizing on-campus competitions and mentoring student startups.",
+      category: "Protocol.Lead",
+      description: "Coordinating network sub-nodes and mentoring new system initiatives.",
     },
     {
-      role: "Mentor",
+      role: "Global Mentor",
       organization: "GirlScript Summer of Code",
-      category: "Open Source",
-      description: "Guiding global contributors through open-source dev & code reviews.",
+      category: "Open.Source",
+      description: "Directing worldwide traffic through open-source repos & code syntax reviews.",
     },
     {
-      role: "Campus Ambassador",
+      role: "Advocacy Agent",
       organization: "Inspiring Women PK",
-      category: "Advocacy",
-      description: "Leading outreach to empower female students through networking.",
+      category: "Sys.Advocacy",
+      description: "Generating outreach packets to upgrade female nodes via secure networking.",
     },
   ];
 
   return (
     <motion.section 
       ref={sectionRef} 
-      className="bg-[#09090b] text-white py-40 px-8 md:px-24 overflow-hidden relative z-40 rounded-t-[3rem] md:rounded-t-[4rem] shadow-[0_-20px_50px_rgba(0,0,0,0.8)] -mt-12 md:-mt-24 border-t-8 border-[#1c1c1f]"
+      className="bg-black text-matrix py-40 px-8 md:px-24 overflow-hidden relative z-40 rounded-t-[3rem] md:rounded-t-[4rem] border-t-2 border-matrix-light shadow-[0_-10px_30px_rgba(0,255,41,0.2)] -mt-12 md:-mt-24"
     >
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#ff0f7b]/10 rounded-full blur-[150px] pointer-events-none" />
+      {/* Background terminal grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00ff4110_1px,transparent_1px),linear-gradient(to_bottom,#00ff4110_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       <motion.div style={{ y: parallaxY }} className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -66,11 +67,11 @@ export default function Experience() {
           transition={{ type: "spring", stiffness: 100 }}
           className="mb-20"
         >
-          <div className="inline-block bg-[#1c1c1f] text-white px-6 py-2 rounded-full font-black tracking-widest uppercase text-sm mb-6 border border-white/10">
-            The Journey So Far ✦
+          <div className="inline-block bg-black text-matrix px-6 py-2 border border-matrix font-bold tracking-widest uppercase text-sm mb-6 shadow-[0_0_10px_rgba(0,255,65,0.5)]">
+            &gt; /usr/local/logs 
           </div>
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase mb-4 leading-none">
-            Experience <br/> <span className="text-gray-500">&</span> Influence.
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter uppercase mb-4 leading-none drop-shadow-[0_0_10px_#00ff41]">
+            SYSTEM <br/> <span className="text-matrix-dark">&</span> ACCESS LOGS.
           </h2>
         </motion.div>
 
@@ -82,20 +83,21 @@ export default function Experience() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, type: "spring", stiffness: 120 }}
-              className="bg-[#121214] border border-white/5 p-8 rounded-[2rem] hover:bg-[#1c1c1f] hover:border-white/20 transition-all duration-300 group"
+              className="bg-black border border-matrix p-8 rounded-none hover:bg-matrix-dark/30 hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-all duration-300 group"
             >
               <div className="flex justify-between items-start mb-6">
-                <span className="px-4 py-1.5 text-xs font-black uppercase tracking-widest bg-white text-black rounded-lg group-hover:bg-[#00ff87] group-hover:text-black transition-colors duration-300">
+                <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest border border-matrix text-matrix group-hover:bg-matrix group-hover:text-black transition-colors duration-300">
                   {exp.category}
                 </span>
+                <span className="text-matrix-dark text-sm">[000{idx+1}]</span>
               </div>
               
-              <h3 className="text-3xl font-black mb-2 tracking-tight">{exp.role}</h3>
-              <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-4 inline-block">
+              <h3 className="text-3xl font-bold mb-2 tracking-tight text-white drop-shadow-[0_0_5px_#fff]">{exp.role}</h3>
+              <div className="text-xl font-bold text-matrix-light mb-4 inline-block">
                 @{exp.organization}
               </div>
               
-              <p className="text-gray-400 font-medium text-lg leading-relaxed">
+              <p className="text-matrix font-medium text-lg leading-relaxed">
                 {exp.description}
               </p>
             </motion.div>
