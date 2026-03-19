@@ -21,7 +21,7 @@ export default function Overlay() {
   const y3 = useTransform(scrollYProgress, [0.5, 0.7, 0.9], [150, 0, -150]);
 
   return (
-    <div ref={containerRef} className="absolute top-0 left-0 w-full h-[500vh] pointer-events-none">
+    <div ref={containerRef} className="absolute top-0 left-0 w-full h-[500vh] pointer-events-none z-20">
       <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-8 md:px-24">
         
         <motion.div
@@ -29,13 +29,28 @@ export default function Overlay() {
           className="absolute inset-0 flex items-center justify-center pointer-events-auto"
         >
           <div className="text-center group">
-            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-matrix drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">
-              WAKE UP, NEO...
-            </h1>
-            <div className="mt-6 inline-block bg-matrix-dark p-[2px] rounded-none border border-matrix">
-               <div className="bg-black backdrop-blur-md px-6 py-2">
-                 <p className="text-sm md:text-lg text-matrix font-medium tracking-widest uppercase">
-                   SYSTEM ADMINISTRATOR // EMAN KHALIQ
+            <motion.h1 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 1 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.1, delayChildren: 0.5 }
+                }
+              }}
+              className="text-6xl md:text-9xl font-black tracking-tighter text-[#4ade80] drop-shadow-xl"
+            >
+              {"Wake up, Eman".split("").map((char, i) => (
+                <motion.span key={i} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.h1>
+            <div className="mt-6 inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-[2px] rounded-full">
+               <div className="bg-[#121212]/80 backdrop-blur-md rounded-full px-6 py-2">
+                 <p className="text-sm md:text-lg text-white font-medium tracking-wide uppercase">
+                   CS Student x AI Developer
                  </p>
                </div>
             </div>
@@ -47,10 +62,10 @@ export default function Overlay() {
           className="absolute inset-0 flex items-center justify-start px-8 md:px-24 pointer-events-auto"
         >
           <div className="max-w-3xl text-left">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-matrix drop-shadow-[0_0_20px_rgba(0,255,65,0.5)] leading-[0.9]">
-              THE MATRIX <br />
-              <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">HAS YOU.</span> <br />
-              FOLLOW THE WHITE RABBIT.
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-2xl leading-[0.9]">
+              BUILDING <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff87] to-[#60efff]">ROBUST</span> <br />
+              APPS.
             </h2>
           </div>
         </motion.div>
@@ -59,18 +74,11 @@ export default function Overlay() {
           style={{ opacity: opacity3, y: y3 }}
           className="absolute inset-0 flex items-center justify-end px-8 md:px-24 pointer-events-auto"
         >
-          <div className="max-w-3xl text-right flex flex-col items-end">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-matrix drop-shadow-[0_0_20px_rgba(0,255,65,0.5)] leading-[0.9]">
-              CONSTRUCT <br />
-              <span className="text-white">INITIATED.</span>
+          <div className="max-w-3xl text-right">
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-2xl leading-[0.9]">
+              DATA & AI <br />
+              FOR <span className="text-transparent bg-clip-text bg-gradient-to-l from-[#ff0f7b] to-[#f89b29]">IMPACT.</span>
             </h2>
-            <div className="mt-8 border-l-4 border-matrix pl-6 max-w-lg text-left">
-              <p className="text-matrix-light text-xl">
-                &gt; Accessing central database...<br/>
-                &gt; Loading skill protocols...<br/>
-                &gt; Establishing secure connection...
-              </p>
-            </div>
           </div>
         </motion.div>
 

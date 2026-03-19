@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         background: "#000000",
-        foreground: "#00ff41",
+        foreground: "#22c55e",
         matrix: {
-          light: "#00ff41",
-          DEFAULT: "#008f11",
-          dark: "#003b00",
+          light: "#4ade80",
+          DEFAULT: "#22c55e",
+          dark: "#166534",
         }
       },
     },

@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${spaceMono.className} bg-black text-[#00ff41] antialiased`}>
+      <body className={`${spaceMono.className} bg-black text-matrix antialiased`}>
         <SmoothScroll>
           {children}
         </SmoothScroll>
