@@ -20,8 +20,18 @@ export default function Overlay() {
   const opacity3 = useTransform(scrollYProgress, [0.5, 0.6, 0.8, 0.9], [0, 1, 1, 0]);
   const y3 = useTransform(scrollYProgress, [0.5, 0.7, 0.9], [150, 0, -150]);
 
+  const text = "Wake up, Eman";
+  const sentenceVars = {
+    hidden: { opacity: 1 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  };
+  const charVars = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div ref={containerRef} className="absolute top-0 left-0 w-full h-[500vh] pointer-events-none z-20">
+    <div ref={containerRef} className="absolute top-0 left-0 w-full h-[500vh] pointer-events-none z-50">
       <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-8 md:px-24">
         
         <motion.div
@@ -30,30 +40,30 @@ export default function Overlay() {
         >
           <div className="text-center group">
             <motion.h1 
+              variants={sentenceVars}
               initial="hidden"
               animate="visible"
-              variants={{
-                hidden: { opacity: 1 },
-                visible: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.1, delayChildren: 0.5 }
-                }
-              }}
-              className="text-6xl md:text-9xl font-black tracking-tighter text-[#4ade80] drop-shadow-xl"
+              className="text-6xl md:text-9xl font-bold tracking-tighter text-[#50fa7b] drop-shadow-[0_0_15px_rgba(80,250,123,0.3)] mb-4"
             >
-              {"Wake up, Eman".split("").map((char, i) => (
-                <motion.span key={i} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
+              {Array.from(text).map((char, i) => (
+                <motion.span key={i} variants={charVars}>
                   {char === " " ? "\u00A0" : char}
                 </motion.span>
               ))}
             </motion.h1>
-            <div className="mt-6 inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-[2px] rounded-full">
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+              className="mt-6 inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-[2px] rounded-full"
+            >
                <div className="bg-[#121212]/80 backdrop-blur-md rounded-full px-6 py-2">
                  <p className="text-sm md:text-lg text-white font-medium tracking-wide uppercase">
-                   CS Student x AI Developer
+                   CS STUDENT X AI DEVELOPER
                  </p>
                </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
