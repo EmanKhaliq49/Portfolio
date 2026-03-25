@@ -9,14 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#000000",
-        foreground: "#22c55e",
+        background: "#0A0A0A",
+        foreground: "#ffffff",
+        neonRed: "#FF1801",
+        electricBlue: "#00F0FF",
         matrix: {
-          light: "#4ade80",
-          DEFAULT: "#22c55e",
-          dark: "#166534",
+          light: "#ff4d4d",
+          DEFAULT: "#e10600",
+          dark: "#990000",
         }
       },
+      backgroundImage: {
+        'glass': 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)',
+      }
     },
   },
   plugins: [],

@@ -20,11 +20,11 @@ export default function About() {
   return (
     <motion.section 
       ref={sectionRef} 
-      className="bg-black text-matrix py-40 px-8 md:px-24 overflow-hidden relative z-20 rounded-t-[3rem] md:rounded-t-[4rem] border-t-2 border-matrix-light shadow-[0_-10px_30px_rgba(0,255,41,0.2)] -mt-12 md:-mt-24 min-h-screen flex flex-col justify-center"
+      className="bg-carbon/80 backdrop-blur-md text-f1Red py-40 px-8 md:px-24 overflow-hidden relative z-20 rounded-t-[3rem] md:rounded-t-[4rem] border-t-2 border-silverArrow shadow-[0_-10px_30px_rgba(225,6,0,0.2)] -mt-12 md:-mt-24 min-h-screen flex flex-col justify-center"
       id="about"
     >
       {/* Background terminal grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00ff4110_1px,transparent_1px),linear-gradient(to_bottom,#00ff4110_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+
 
       <div className="max-w-7xl mx-auto w-full relative z-10 flex flex-col lg:flex-row items-center justify-between gap-20">
         
@@ -35,11 +35,11 @@ export default function About() {
 
         {/* About Me */}
         <div className="w-full lg:w-1/2 flex flex-col">
-          <RevealTitle className="text-2xl md:text-3xl tracking-[7px] uppercase text-matrix-light mb-8">
+          <RevealTitle className="text-2xl md:text-3xl tracking-[7px] uppercase text-silverArrow mb-8">
             SYSTEM OVERRIDE
           </RevealTitle>
 
-          <RevealText className="text-3xl md:text-4xl lg:text-[2.2rem] font-semibold leading-tight md:leading-snug tracking-wide text-matrix-DEFAULT space-y-8">
+          <RevealText className="text-3xl md:text-4xl lg:text-[2.2rem] font-semibold leading-tight md:leading-snug tracking-wide text-f1Red-DEFAULT space-y-8">
             <p>
               I'm an operative at UET Taxila, obsessed with using <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">Data & AI</span> to hack the simulation. Straight A's (3.54 CGPA) + Harvard CS50x certified.
             </p>
@@ -55,7 +55,7 @@ export default function About() {
 
       {/* Access Logs */}
       <div className="max-w-7xl mx-auto w-full relative z-10 mt-40">
-        <RevealTitle className="text-2xl md:text-3xl tracking-[7px] uppercase text-matrix-light mb-12 border-b border-matrix/30 pb-4">
+        <RevealTitle className="text-2xl md:text-3xl tracking-[7px] uppercase text-silverArrow mb-12 border-b border-f1Red/30 pb-4">
           ACCESS LOGS
         </RevealTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
@@ -63,12 +63,12 @@ export default function About() {
             <RevealText key={idx} className="h-full">
               <motion.div 
                 whileHover={{ scale: 1.02, x: 10 }}
-                className="h-full p-6 bg-black/40 border border-matrix border-l-4 rounded-none flex items-center gap-4 cursor-default hover:bg-matrix-dark/40 backdrop-blur-sm"
+                className="h-full p-6 bg-black/40 border border-f1Red border-l-4 rounded-none flex items-center gap-4 cursor-default hover:bg-carbon/40 backdrop-blur-sm"
               >
-                <div className="w-8 h-8 flex items-center justify-center shrink-0 text-matrix-light font-bold">
+                <div className="w-8 h-8 flex items-center justify-center shrink-0 text-silverArrow font-bold">
                   {`[${idx < 9 ? '0' : ''}${idx + 1}]`}
                 </div>
-                <p className="text-lg font-medium text-matrix-light">
+                <p className="text-lg font-medium text-silverArrow">
                   {item}
                 </p>
               </motion.div>

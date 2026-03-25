@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Space_Mono } from "next/font/google";
+import { Oswald } from "next/font/google";
 import "./globals.css";
 
-const spaceMono = Space_Mono({ 
+const oswald = Oswald({ 
   weight: ['400', '700'],
   subsets: ["latin"] 
 });
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${spaceMono.className} bg-black text-matrix antialiased`}>
+      <body className={`${oswald.className} bg-background text-foreground antialiased italic`}>
         <SmoothScroll>
           {children}
         </SmoothScroll>

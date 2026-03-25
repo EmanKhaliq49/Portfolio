@@ -6,16 +6,21 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Arsenal from "@/components/Arsenal";
 import Footer from "@/components/Footer";
+import F1Lights from "@/components/F1Lights";
+import { RaceProvider } from "@/components/RaceContext";
 
 export default function Home() {
   return (
-    <main className="bg-black min-h-screen">
-      <div className="relative border-b-2 border-matrix-dark shadow-[0_10px_30px_rgba(0,143,17,0.3)] z-50">
-        <ScrollyCanvas />
-        <Overlay />
-      </div>
+    <main className="bg-carbon bg-carbon-pattern bg-fixed min-h-screen">
+      <RaceProvider>
+        <div className="relative border-b-[6px] border-f1Red shadow-[0_10px_30px_rgba(255,24,1,0.2)] z-50">
+          <F1Lights />
+          <ScrollyCanvas />
+          <Overlay />
+        </div>
+      </RaceProvider>
       
-      <div className="relative text-matrix">
+      <div className="relative text-f1Red">
         {/* Matrix background pinned to the viewport while inside this section */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="sticky top-0 h-screen w-full">
@@ -23,7 +28,7 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="relative z-10 bg-black/40 backdrop-blur-[2px]">
+        <div className="relative z-10 bg-transparent">
           <About />
           <Arsenal />
           <Projects />

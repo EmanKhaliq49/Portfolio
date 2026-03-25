@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRace } from "./RaceContext";
 
 export default function Overlay() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -9,6 +10,7 @@ export default function Overlay() {
     target: containerRef,
     offset: ["start start", "end end"],
   });
+  const { sequenceComplete } = useRace();
 
   const opacity1 = useTransform(scrollYProgress, [0, 0.15, 0.25], [1, 1, 0]);
   const y1 = useTransform(scrollYProgress, [0, 0.25], [0, -150]);
@@ -20,7 +22,9 @@ export default function Overlay() {
   const opacity3 = useTransform(scrollYProgress, [0.5, 0.6, 0.8, 0.9], [0, 1, 1, 0]);
   const y3 = useTransform(scrollYProgress, [0.5, 0.7, 0.9], [150, 0, -150]);
 
-  const text = "Wake up, Eman";
+  if (!sequenceComplete) return null;
+
+  const text = "EMAN KHALIQ";
   const sentenceVars = {
     hidden: { opacity: 1 },
     visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
@@ -35,15 +39,15 @@ export default function Overlay() {
       <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-8 md:px-24">
         
         <motion.div
-          style={{ opacity: opacity1, y: y1, scale: scale1 }}
-          className="absolute inset-0 flex items-center justify-center pointer-events-auto"
+           style={{ opacity: opacity1, y: y1, scale: scale1 }}
+           className="absolute inset-0 flex items-center justify-center pointer-events-auto"
         >
           <div className="text-center group">
             <motion.h1 
               variants={sentenceVars}
               initial="hidden"
               animate="visible"
-              className="text-6xl md:text-9xl font-bold tracking-tighter text-[#50fa7b] drop-shadow-[0_0_15px_rgba(80,250,123,0.3)] mb-4"
+              className="text-6xl md:text-9xl font-bold tracking-tighter text-[#e10600] drop-shadow-md mb-4 uppercase"
             >
               {Array.from(text).map((char, i) => (
                 <motion.span key={i} variants={charVars}>
@@ -56,10 +60,10 @@ export default function Overlay() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.5, duration: 0.5 }}
-              className="mt-6 inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-[2px] rounded-full"
+              className="mt-6 inline-block bg-gradient-to-r from-red-600 via-[#e10600] to-neutral-200 p-[2px] rounded-sm skew-x-[-10deg]"
             >
-               <div className="bg-[#121212]/80 backdrop-blur-md rounded-full px-6 py-2">
-                 <p className="text-sm md:text-lg text-white font-medium tracking-wide uppercase">
+               <div className="bg-[#121212]/90 backdrop-blur-md px-6 py-2 skew-x-[10deg]">
+                 <p className="text-sm md:text-lg text-neutral-200 font-medium tracking-wide uppercase">
                    CS STUDENT X AI DEVELOPER
                  </p>
                </div>
@@ -72,9 +76,9 @@ export default function Overlay() {
           className="absolute inset-0 flex items-center justify-start px-8 md:px-24 pointer-events-auto"
         >
           <div className="max-w-3xl text-left">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-2xl leading-[0.9]">
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-md leading-[0.9] uppercase">
               BUILDING <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00ff87] to-[#60efff]">ROBUST</span> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e10600] to-neutral-400">ROBUST</span> <br />
               APPS.
             </h2>
           </div>
@@ -85,9 +89,9 @@ export default function Overlay() {
           className="absolute inset-0 flex items-center justify-end px-8 md:px-24 pointer-events-auto"
         >
           <div className="max-w-3xl text-right">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-2xl leading-[0.9]">
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-white drop-shadow-md leading-[0.9] uppercase">
               DATA & AI <br />
-              FOR <span className="text-transparent bg-clip-text bg-gradient-to-l from-[#ff0f7b] to-[#f89b29]">IMPACT.</span>
+              FOR <span className="text-transparent bg-clip-text bg-gradient-to-l from-[#e10600] to-neutral-400">IMPACT.</span>
             </h2>
           </div>
         </motion.div>

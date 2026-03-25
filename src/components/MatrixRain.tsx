@@ -20,11 +20,10 @@ export default function MatrixRain() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Matrix characters - katakana + latin
-    const chars = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレゲゼデベペオォコソトノホモヨョロゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const charArray = chars.split("");
+    // Gen Z Goofy F1 Emojis
+    const emojis = ["🏎️", "🏎️", "💨", "🏁", "🏆", "🔥", "🚦", "⛽", "🏁", "👀", "🔥", "🏎️"];
 
-    const fontSize = 16;
+    const fontSize = 28;
     const columns = canvas.width / fontSize;
     const drops: number[] = [];
 
@@ -34,38 +33,29 @@ export default function MatrixRain() {
     }
 
     const draw = () => {
-      // Translucent black background to create trails
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Clear previous frame completely so the carbon track background from page shows through perfectly!
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "#0F0"; // Green text
-      ctx.font = `${fontSize}px monospace`;
+      ctx.font = `${fontSize}px sans-serif`;
 
       for (let i = 0; i < drops.length; i++) {
-        // Random character
-        const text = charArray[Math.floor(Math.random() * charArray.length)];
+        // Random emoji
+        const text = emojis[Math.floor(Math.random() * emojis.length)];
 
-        // Randomize brightness for some characters to look like they're shining
-        if (Math.random() > 0.98) {
-          ctx.fillStyle = "#FFF"; // White
-        } else if (Math.random() > 0.95) {
-          ctx.fillStyle = "#8F8"; // Light green
-        } else {
-          ctx.fillStyle = "#0F0"; // Standard green
-        }
-
+        // Draw the emoji
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         // Reset drop to top randomly
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) {
           drops[i] = 0;
         }
 
-        drops[i]++;
+        // Variable speed based on column
+        drops[i] += Math.random() < 0.2 ? 2 : 1; 
       }
     };
 
-    const interval = setInterval(draw, 33); // ~30fps
+    const interval = setInterval(draw, 50); // ~20fps for emoji drawing to look like a goof stream
 
     return () => {
       clearInterval(interval);
@@ -76,7 +66,7 @@ export default function MatrixRain() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40 z-0 bg-black"
+      className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 bg-transparent opacity-80"
     />
   );
 }

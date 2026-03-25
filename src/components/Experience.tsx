@@ -54,10 +54,10 @@ export default function Experience() {
   return (
     <motion.section 
       ref={sectionRef} 
-      className="bg-black text-matrix py-40 px-8 md:px-24 overflow-hidden relative z-40 rounded-t-[3rem] md:rounded-t-[4rem] border-t-2 border-matrix-light shadow-[0_-10px_30px_rgba(0,255,41,0.2)] -mt-12 md:-mt-24"
+      className="bg-carbon/80 backdrop-blur-md text-f1Red py-40 px-8 md:px-24 overflow-hidden relative z-40 rounded-t-[3rem] md:rounded-t-[4rem] border-t-2 border-silverArrow shadow-[0_-10px_30px_rgba(225,6,0,0.2)] -mt-12 md:-mt-24"
     >
       {/* Background terminal grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00ff4110_1px,transparent_1px),linear-gradient(to_bottom,#00ff4110_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+
 
       <motion.div style={{ y: parallaxY }} className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -67,11 +67,11 @@ export default function Experience() {
           transition={{ type: "spring", stiffness: 100 }}
           className="mb-20"
         >
-          <div className="inline-block bg-black text-matrix px-6 py-2 border border-matrix font-bold tracking-widest uppercase text-sm mb-6 shadow-[0_0_10px_rgba(0,255,65,0.5)]">
+          <div className="inline-block bg-carbon/80 backdrop-blur-md text-f1Red px-6 py-2 border border-f1Red font-bold tracking-widest uppercase text-sm mb-6 shadow-[0_0_10px_rgba(225,6,0,0.5)]">
             &gt; /usr/local/logs 
           </div>
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter uppercase mb-4 leading-none drop-shadow-[0_0_10px_#00ff41]">
-            SYSTEM <br/> <span className="text-matrix-dark">&</span> ACCESS LOGS.
+          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter uppercase mb-4 leading-none drop-shadow-[0_0_10px_#e10600]">
+            SYSTEM <br/> <span className="text-carbon">&</span> ACCESS LOGS.
           </h2>
         </motion.div>
 
@@ -83,21 +83,21 @@ export default function Experience() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, type: "spring", stiffness: 120 }}
-              className="bg-black border border-matrix p-8 rounded-none hover:bg-matrix-dark/30 hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-all duration-300 group"
+              className="bg-carbon/80 backdrop-blur-md border border-f1Red p-8 rounded-none hover:bg-carbon/30 hover:shadow-[0_0_15px_rgba(225,6,0,0.4)] transition-all duration-300 group"
             >
               <div className="flex justify-between items-start mb-6">
-                <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest border border-matrix text-matrix group-hover:bg-matrix group-hover:text-black transition-colors duration-300">
+                <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-widest border border-f1Red text-f1Red group-hover:bg-f1Red group-hover:text-black transition-colors duration-300">
                   {exp.category}
                 </span>
-                <span className="text-matrix-dark text-sm">[000{idx+1}]</span>
+                <span className="text-carbon text-sm">[000{idx+1}]</span>
               </div>
               
               <h3 className="text-3xl font-bold mb-2 tracking-tight text-white drop-shadow-[0_0_5px_#fff]">{exp.role}</h3>
-              <div className="text-xl font-bold text-matrix-light mb-4 inline-block">
+              <div className="text-xl font-bold text-silverArrow mb-4 inline-block">
                 @{exp.organization}
               </div>
               
-              <p className="text-matrix font-medium text-lg leading-relaxed">
+              <p className="text-f1Red font-medium text-lg leading-relaxed">
                 {exp.description}
               </p>
             </motion.div>
